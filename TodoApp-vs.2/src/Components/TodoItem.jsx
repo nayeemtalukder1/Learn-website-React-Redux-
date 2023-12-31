@@ -1,4 +1,8 @@
 function TodoItem({ todoName, todoDate }) {
+  // { todoName , todoDate } destructue object
+  // let { todoName , todoDate } = props;
+  // let todoName = props.todoName
+  // let todoDate = props.todoDate
   return (
     <div className="container">
       <div className="row .kg-row">
