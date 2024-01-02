@@ -1,0 +1,13 @@
+.calculator {
+  border: 1px solid rgb(187, 183, 183);
+  border-radius: 5px;
+  width: 200px;
+  
+  margin-left: 100px;
+  margin-top: 100px;
+  padding-top: 10px;
+  padding-left: 2px;
+}
+
+
+
