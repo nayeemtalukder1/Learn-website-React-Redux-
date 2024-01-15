@@ -6,7 +6,7 @@ import Container from "./Components/Container";
 import FoodInput from "./Components/FoodInput";
 import { useState } from "react";
 function App() {
-  let [foodItems, setFoodItems] = useState(["Dal", "Ruty", "vegetable"]);
+  let [foodItems, setFoodItems] = useState([]);
 
   const onKeyDown = (event) => {
     if (event.key === "Enter") {
