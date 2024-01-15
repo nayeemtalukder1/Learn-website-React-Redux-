@@ -1,23 +1,18 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { MdOutlineAddToQueue } from "react-icons/md";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [dueDate, setDueDate] = useState("");
-
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
-
-  const handleDateChange = (event) => {
-    setDueDate(event.target.value);
-  };
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
   const handleAddButtonClicked = (event) => {
     event.preventDefault();
+    const todoName = todoNameElement.current.value;
+    const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
+    console.log(`${todoName} ${dueDate}`);
     onNewItem(todoName, dueDate);
-    setTodoName("");
-    setDueDate("");
   };
   return (
     <div class="container">
@@ -25,13 +20,12 @@ function AddTodo({ onNewItem }) {
         <div class="col-6">
           <input
             type="text"
+            ref={todoNameElement}
             placeholder="Enter Todo here"
-            value={todoName}
-            onChange={handleNameChange}
           />
         </div>
         <div class="col-4">
-          <input type="date" value={dueDate} onChange={handleDateChange} />
+          <input type="date" ref={dueDateElement} />
         </div>
         <div class="col-2">
           <button type="submit" class="btn btn-success .kg-button">
