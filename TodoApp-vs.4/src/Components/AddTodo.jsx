@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MdOutlineAddToQueue } from "react-icons/md";
 
 function AddTodo({ onNewItem }) {
   const [todoName, setTodoName] = useState("");
@@ -17,11 +18,10 @@ function AddTodo({ onNewItem }) {
     setTodoName("");
     setDueDate("");
   };
-
   return (
-    <div className="container">
-      <div className="row .kg-row">
-        <div className="col-6">
+    <div class="container">
+      <div class="row .kg-row">
+        <div class="col-6">
           <input
             type="text"
             placeholder="Enter Todo here"
@@ -29,16 +29,16 @@ function AddTodo({ onNewItem }) {
             onChange={handleNameChange}
           />
         </div>
-        <div className="col-4">
+        <div class="col-4">
           <input type="date" value={dueDate} onChange={handleDateChange} />
         </div>
-        <div className="col-2">
+        <div class="col-2">
           <button
             type="button"
-            className="btn btn-success .kg-button"
+            class="btn btn-success .kg-button"
             onClick={handleAddButtonClicked}
           >
-            Add
+            <MdOutlineAddToQueue />
           </button>
         </div>
       </div>
